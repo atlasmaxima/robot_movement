@@ -1,0 +1,38 @@
+{
+  "name": "robot-movement",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "@types/aws-lambda": "^8.10.137",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "globals": "^15.1.0",
+    "pino-pretty": "^11.0.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.1"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "pino": "^8.20.0",
+    "ts-node": "^10.9.2"
+  },
+  "scripts": {
+    "esbuild": "esbuild ./src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "build": "tsc",
+    "start": "ts-node src/main.ts",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "eslint": "npx eslint ."
+  },
+  "description": "Commands to move and track robots",
+  "main": "src/main.ts",
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
