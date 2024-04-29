@@ -25,7 +25,7 @@ Move and track robots
 
 ## Usage 
 
-### Option 1
+### Option 1 [Building and Running the Application]
 
 1. Build the project:
 
@@ -50,33 +50,28 @@ Move and track robots
     npm run test
     ```
 
-### Option 2
+### Option 2 [Lambda Function with Docker image]
 
-1. Login into [Container Registry](https://ghcr.io):
-
-    ```
-    docker login ghcr.io -u USERNAME
-    ```
-
-2. Pull Docker image:
+1. Pull Docker image:
 
     ```
     docker pull ghcr.io/atlasmaxima/robot_movement:main
     ```
 
-3. Run Docker container:
+2. Run Docker container:
 
     ```
     docker run --platform linux/amd64 -p 9000:8080 ghcr.io/atlasmaxima/robot_movement:main
     ```
 
-4. Send a request:
+3. Send a request:
 
+    #### Linux/Ubuntu Command:
     ```
     curl "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
     ```
 
-    #### Request Body
+    #### Request Body:
     ```
         {
             "robotType": "warehouse",
@@ -88,7 +83,13 @@ Move and track robots
         }
     ```
 
-    #### An example request 
+    #### An Full Example Request:
     ```
-    curl http://your-api-endpoint -d {"robotType":"warehouse","moveSequence":"NESW","gridOrigin":"SW","gridSize":10,"startX":0,"startY":0}'
+    curl "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"robotType":"warehouse","moveSequence":"NESW","gridOrigin":"SW","gridSize":10,"startX":0,"startY":0}'
+    ```
+
+    #### Powershell Command:
+
+    ```
+    Invoke-RestMethod -Uri "http://localhost:9000/2015-03-31/functions/function/invocations" -Method Post -Body '{}'
     ```
