@@ -34,7 +34,8 @@ Move and track robots
     ```
 
 2. Start the application:
-    For Node version 19 and below:
+
+    #### For Node version 19 and below:
     ```
     npm start -- -h
     ```
@@ -44,7 +45,7 @@ Move and track robots
     npm start -- -t warehouse -o SW -s NESW
     ```
 
-    For Node version 20 and above:
+    #### For Node version 20 and above:
     ```
     npm run start:dist
     ```
