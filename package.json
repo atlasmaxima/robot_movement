@@ -24,6 +24,7 @@
     "esbuild": "esbuild ./src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
     "build": "tsc",
     "start": "ts-node src/main.ts",
+    "start:dist": "node ./dist/main.js",
     "test": "jest",
     "coverage": "jest --coverage",
     "eslint": "npx eslint ."

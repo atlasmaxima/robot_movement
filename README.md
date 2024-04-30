@@ -25,7 +25,7 @@ Move and track robots
 
 ## Usage 
 
-### Option 1 [Building and Running the Application]
+### Build and Develop Application
 
 1. Build the project:
 
@@ -34,7 +34,7 @@ Move and track robots
     ```
 
 2. Start the application:
-
+    For Node version 19 and below:
     ```
     npm start -- -h
     ```
@@ -44,13 +44,23 @@ Move and track robots
     npm start -- -t warehouse -o SW -s NESW
     ```
 
+    For Node version 20 and above:
+    ```
+    npm run start:dist
+    ```
+
+    Example cli command: 
+    ```
+    npm run start:dist -- -t warehouse -o SW -s NESW
+    ```
+   
 3. Run Test:
 
     ```
     npm run test
     ```
 
-### Option 2 [Lambda Function with Docker image]
+### Run the Application [Lambda Function with Docker image]
 
 1. Pull Docker image:
 
